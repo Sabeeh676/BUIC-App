@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "264034235970",
+    "firebase_url": "https://buic-app-default-rtdb.firebaseio.com",
+    "project_id": "buic-app",
+    "storage_bucket": "buic-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264034235970:android:1aed9b76c7ba6608c19fdb",
+        "android_client_info": {
+          "package_name": "com.buic.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264034235970-8a9bmaemibv6psko9rfckcv8j3urlc7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.buic.app",
+            "certificate_hash": "3c0246f1425a3b7f94c0e777ad2fc6b814c36d20"
+          }
+        },
+        {
+          "client_id": "264034235970-hg9lf9nrrmsiorgcj97qpj7ccfot0lak.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.buic.app",
+            "certificate_hash": "e377602f21286be20dc721704c892777b235e0b1"
+          }
+        },
+        {
+          "client_id": "264034235970-m119anm7utnam8qo3if38cpqnjs24tse.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnjcENSTlvTdxHjHFa0nTequ-NkGCJAC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264034235970-m119anm7utnam8qo3if38cpqnjs24tse.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "264034235970-3138q2jspiicnq8tbj5ooa2nasc03tts.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.buicApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264034235970:android:5eeccc44a6a07219c19fdb",
+        "android_client_info": {
+          "package_name": "com.example.buic_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264034235970-htd0o4lqobctb10u4ku6fq9gc3m4i067.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buic_app",
+            "certificate_hash": "3c0246f1425a3b7f94c0e777ad2fc6b814c36d20"
+          }
+        },
+        {
+          "client_id": "264034235970-thru4qtpi5cfdh7cq0h7t1rp8qf9jpd8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buic_app",
+            "certificate_hash": "e377602f21286be20dc721704c892777b235e0b1"
+          }
+        },
+        {
+          "client_id": "264034235970-m119anm7utnam8qo3if38cpqnjs24tse.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnjcENSTlvTdxHjHFa0nTequ-NkGCJAC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264034235970-m119anm7utnam8qo3if38cpqnjs24tse.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "264034235970-3138q2jspiicnq8tbj5ooa2nasc03tts.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.buicApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
