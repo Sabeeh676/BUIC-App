@@ -1,14 +1,14 @@
 # 🎓 BUIC App
 
-A cross-platform Flutter application built for **Bahria University Islamabad Campus (BUIC)** students, teachers, and parents. It provides a unified portal to manage academic activities, attendance, fees, timetables, and more — all integrated with Firebase.
+A comprehensive cross-platform Flutter application built for **Bahria University Islamabad Campus (BUIC)** students, teachers, and parents. It features an integrated **AI Assistant (RAG Chatbot)** for university rules & regulations, along with complete academic management powered by Firebase.
 
 ---
 
 ## ✨ Features
 
 ### 👨‍🎓 Student Portal
-- **Dashboard** — Quick overview of academic status
-- **BU AI Assistant** — RAG-based AI chatbot trained on the official handbook with multi-turn session memory
+- **BU AI Assistant** — RAG-based AI chatbot trained on the official Bahria University handbook with multi-turn conversation memory and source page citations
+- **Dashboard** — Quick overview of academic status and daily schedule
 - **My Courses** — View enrolled courses, grades, and details
 - **Transcript** — Access academic transcripts
 - **Fee Management** — Check fee status and payment details
@@ -19,19 +19,16 @@ A cross-platform Flutter application built for **Bahria University Islamabad Cam
 
 ### 👨‍🏫 Teacher Portal
 - **Teacher Login** — Separate authentication flow for faculty
-- **Teacher Management** — Manage courses and student interactions
+- **Teacher Management** — Manage courses, assignments, quizzes, and student interactions
 
 ### 👨‍👩‍👦 Parent Portal
 - **Parent Login** — Dedicated login for parents
 - **Parent Dashboard** — Monitor ward's academic progress
 
-### 🔐 Authentication
+### 🔐 Authentication & Control
 - Firebase Authentication (Email/Password)
 - Role-based routing (Student / Teacher / Parent / Admin)
 - Persistent sessions with `SharedPreferences`
-
-### 🛠️ Admin Panel
-- Administrative tools and management features
 
 ---
 
@@ -39,110 +36,103 @@ A cross-platform Flutter application built for **Bahria University Islamabad Cam
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | Flutter (Dart) |
-| Backend | Firebase (Auth, Firestore, Storage, Functions, Messaging) |
-| State Management | Riverpod + Provider |
-| Local DB | Hive + SQLite (sqflite) |
-| Charts | fl_chart |
-| Notifications | Firebase Messaging + flutter_local_notifications |
-| HTTP Client | Dio |
-| UI Extras | flutter_animate, shimmer, percent_indicator, dotted_border |
+| **Mobile Framework** | Flutter (Dart `^3.9.0`) |
+| **App Database & Auth** | Firebase (Auth, Firestore, Storage, Functions, Messaging) |
+| **AI Backend Server** | Python 3.9+, FastAPI, Uvicorn |
+| **AI / LLM Model** | Groq (`gemma2-9b-it`) via LangChain |
+| **Vector DB & Search** | FAISS Vector Store + Google Generative AI Embeddings (`embedding-001`) |
+| **AI Architecture** | RAG (Retrieval-Augmented Generation) with History-Aware Multi-Turn Memory |
+| **State Management** | Riverpod + Provider |
+| **Local Database** | Hive + SQLite (`sqflite`) |
+| **HTTP Client** | Dio |
+| **UI Extras** | `flutter_animate`, `shimmer`, `fl_chart`, `percent_indicator` |
 
 ---
 
 ## 📁 Project Structure
 
-```
-lib/
-├── admin/                  # Admin panel screens
-├── home_page/              # Student home page widgets
-├── pages/                  # Main feature pages
-│   ├── home_page.dart
-│   ├── my_courses_page.dart
-│   ├── transcript_page.dart
-│   ├── fee_page.dart
-│   ├── leave_status_page.dart
-│   └── downloads_page.dart
-├── services/               # Business logic & data services
-│   ├── student_data_service.dart
-│   ├── timetable_service.dart
-│   ├── download_service.dart
-│   └── database_helper.dart
-├── teacher_management/     # Teacher-specific screens
-├── main.dart               # App entry point
-├── auth_wrapper.dart       # Auth state listener
-├── home_screen.dart        # Student home screen
-├── login_screen.dart       # Student login
-├── teacher_login.dart      # Teacher login
-├── parent_login.dart       # Parent login
-├── splash_screen.dart      # Animated splash screen
-├── to_do_list.dart         # Local to-do feature
-└── firebase_options.dart   # Firebase config
+```text
+buic_app/
+├── backend/                       # Python AI Backend Server
+│   ├── api.py                     # FastAPI RAG server & LangChain pipeline
+│   ├── requirements.txt           # Python AI dependencies
+│   ├── BU_Chatbot_Project_Report_Updated.pdf # Detailed project report
+│   └── data/
+│       └── handbook.pdf           # University Handbook dataset
+├── lib/                           # Flutter Mobile Application
+│   ├── admin/                     # Admin panel screens
+│   ├── home_page/                 # Student home widgets & Chatbot UI
+│   │   └── chatbot_page.dart      # Chatbot interface with session history
+│   ├── pages/                     # Main feature pages
+│   │   └── home_page.dart         # Main student dashboard
+│   ├── services/                  # Business logic & APIs
+│   │   └── chatbot_service.dart   # Dio service connecting to AI backend
+│   ├── teacher_management/        # Faculty management screens
+│   ├── main.dart                  # App entry point
+│   ├── auth_wrapper.dart          # Role-based auth routing
+│   └── firebase_options.dart      # Firebase configuration
+├── RUN_GUIDE.md                   # Step-by-step setup manual
+└── README.md                      # Project documentation
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-> 📖 **Full Setup Manual:** See [RUN_GUIDE.md](file:///c:/Users/hp/Downloads/buic_app/buic_app/RUN_GUIDE.md) for step-by-step instructions on setting up and running the Python AI backend and Flutter mobile app.
+> 📖 **Full Setup Manual:** For detailed instructions, see [RUN_GUIDE.md](RUN_GUIDE.md).
 
 ### Prerequisites
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (Dart SDK `^3.9.0`)
-- [Firebase CLI](https://firebase.google.com/docs/cli) configured
-- Android Studio / VS Code
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (`^3.9.0`)
+- [Python](https://www.python.org/downloads/) (`3.9+`)
+- [Groq API Key](https://console.groq.com/keys) & [Google AI API Key](https://aistudio.google.com/app/apikey)
 
-### Setup
+### Quick Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/sabeeh676/buic_app.git
-   cd buic_app
-   ```
+#### 1. Start the Python AI Backend
+```bash
+cd backend
+pip install -r requirements.txt
+# Set GROQ_API_KEY and GOOGLE_API_KEY in api.py
+uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+```
 
-2. **Install dependencies**
-   ```bash
-   flutter pub get
-   ```
-
-3. **Configure Firebase**
-   - Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
-   - Add your `google-services.json` (Android) and `GoogleService-Info.plist` (iOS)
-   - Update `lib/firebase_options.dart` with your config
-
-4. **Run the app**
-   ```bash
-   flutter run
-   ```
+#### 2. Start the Flutter App
+```bash
+# In a new terminal window at project root
+flutter pub get
+flutter run
+```
 
 ---
 
 ## 📦 Key Dependencies
 
+### Flutter Frontend (`pubspec.yaml`)
 ```yaml
 firebase_auth, firebase_core, cloud_firestore, firebase_storage,
 firebase_messaging, cloud_functions, flutter_riverpod, provider,
 hive, sqflite, fl_chart, dio, image_picker, file_picker,
-flutter_animate, shimmer, table_calendar, cached_network_image
+flutter_animate, shimmer, table_calendar
+```
+
+### Python AI Backend (`backend/requirements.txt`)
+```text
+fastapi, uvicorn, langchain, langchain-groq, langchain-google-genai,
+langchain-community, faiss-cpu, pypdf, python-multipart
 ```
 
 ---
 
 ## 🔒 Security Note
 
-> ⚠️ **Important:** The `lib/firebase_options.dart` file may contain sensitive Firebase API keys. Make sure to restrict your Firebase API keys in the [Google Cloud Console](https://console.cloud.google.com) and never expose production credentials publicly.
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+> ⚠️ **Important:** Ensure that your `GROQ_API_KEY`, `GOOGLE_API_KEY`, and `firebase_options.dart` keys are kept secure and restricted in their respective developer consoles.
 
 ---
 
 ## 📄 License
 
-This project is for educational purposes at **Bahria University Islamabad Campus**.
+This project is created for educational and academic purposes at **Bahria University Islamabad Campus (BUIC)**.
 
 ---
 
-<p align="center">Built with ❤️ using Flutter & Firebase</p>
+<p align="center">Built with ❤️ using Flutter, Python, LangChain & Firebase</p>
