@@ -85,6 +85,16 @@ The AI Chatbot relies on a Python FastAPI server running RAG (Retrieval-Augmente
 
 ---
 
+## 🔑 Default Login Credentials
+
+For testing and administrative management, use the default credentials below:
+
+| Role | Email / Username | Password | Access Rights |
+| :--- | :--- | :--- | :--- |
+| **Admin** | `admin@buic.com` | `admin` | Full admin dashboard to add/edit students, teachers, classes & fees |
+
+---
+
 ## ❓ Troubleshooting
 
 | Issue | Solution |
