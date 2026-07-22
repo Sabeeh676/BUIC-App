@@ -10,7 +10,8 @@ Before running the application, make sure you have the following installed:
 
 1. **Python** (version `3.9` or higher) — [Download Python](https://www.python.org/downloads/)
 2. **Flutter SDK** — [Install Flutter](https://docs.flutter.dev/get-started/install)
-3. **API Keys:**
+3. **IDE / Editor:** Android Studio or VS Code (with Flutter & Dart extensions)
+4. **API Keys:**
    - **Groq API Key:** Free key from [console.groq.com](https://console.groq.com/)
    - **Google AI API Key:** Free key from [aistudio.google.com](https://aistudio.google.com/)
 

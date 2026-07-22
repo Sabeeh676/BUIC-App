@@ -83,6 +83,7 @@ buic_app/
 
 ### Prerequisites
 - [Flutter SDK](https://docs.flutter.dev/get-started/install) (`^3.9.0`)
+- Android Studio / VS Code (with Flutter & Dart plugins)
 - [Python](https://www.python.org/downloads/) (`3.9+`)
 - [Groq API Key](https://console.groq.com/keys) & [Google AI API Key](https://aistudio.google.com/app/apikey)
 
