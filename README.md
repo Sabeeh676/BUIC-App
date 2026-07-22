@@ -8,6 +8,7 @@ A cross-platform Flutter application built for **Bahria University Islamabad Cam
 
 ### 👨‍🎓 Student Portal
 - **Dashboard** — Quick overview of academic status
+- **BU AI Assistant** — RAG-based AI chatbot trained on the official handbook with multi-turn session memory
 - **My Courses** — View enrolled courses, grades, and details
 - **Transcript** — Access academic transcripts
 - **Fee Management** — Check fee status and payment details
@@ -82,6 +83,8 @@ lib/
 ---
 
 ## 🚀 Getting Started
+
+> 📖 **Full Setup Manual:** See [RUN_GUIDE.md](file:///c:/Users/hp/Downloads/buic_app/buic_app/RUN_GUIDE.md) for step-by-step instructions on setting up and running the Python AI backend and Flutter mobile app.
 
 ### Prerequisites
 - [Flutter SDK](https://docs.flutter.dev/get-started/install) (Dart SDK `^3.9.0`)

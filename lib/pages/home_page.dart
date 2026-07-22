@@ -1,4 +1,5 @@
 import 'package:buic_app/home_page/assignments.dart';
+import 'package:buic_app/home_page/chatbot_page.dart';
 import 'package:buic_app/home_page/lectures.dart';
 import 'package:buic_app/home_page/news_event.dart';
 import 'package:buic_app/home_page/profile.dart';
@@ -63,6 +64,11 @@ class _HomePageState extends State<HomePage> {
       'title': 'Downloads',
       'icon': Icons.download_for_offline_outlined,
       'page': const DownloadsPage(),
+    },
+    {
+      'title': 'BU Assistant',
+      'icon': Icons.smart_toy_outlined,
+      'page': const ChatbotPage(),
     },
   ];
 
@@ -171,6 +177,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F7FA),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ChatbotPage()),
+        ),
+        backgroundColor: const Color(0xFF00695C),
+        icon: const Text('🎓', style: TextStyle(fontSize: 20)),
+        label: const Text(
+          'BU Assistant',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
+          ),
+        ),
+        elevation: 6,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
